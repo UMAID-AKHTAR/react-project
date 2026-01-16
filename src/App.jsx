@@ -1,7 +1,9 @@
-import Todo from "./Todo";
+import Randompsswrd from "./Randompsswrd";
 
 function App() {
-  return <Todo />;
+  return (
+  <Randompsswrd />
+  )
 }
 
 export default App;
