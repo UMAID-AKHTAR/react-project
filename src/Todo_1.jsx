@@ -4,40 +4,47 @@ function Todo() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [todos, setTodos] = useState([]);
-  const [editIndex, setEditIndex] = useState(null);
+  const [editId, setEditId] = useState(null);
 
-  const add = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!name || !email/*name.trim() === "" || email.trim() === ""*/) {
+    if (!name || !email) {
       alert("All fields are required");
       return;
     }
 
-    if (editIndex !== null) {
+    if (editId) {
       // UPDATE
-      const updatedTodos = [...todos];
-      updatedTodos[editIndex] = { name, email };
-      setTodos(updatedTodos);
-      setEditIndex(null);
+      setTodos(
+        todos.map((item) =>
+          item.id === editId ? { ...item, name, email } : item
+        )
+      );
+      setEditId(null);
     } else {
       // ADD
-      setTodos([...todos, { name, email }]);
+      setTodos([...todos, { id: Date.now(), name, email }]);
     }
 
     setName("");
     setEmail("");
   };
 
-  const deleteTodo = (index) => {
-    const updatedTodos = todos.filter((_, i) => i !== index);
-    setTodos(updatedTodos);
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((item) => item.id !== id));
   };
 
-  const editTodo = (index) => {
-    setName(todos[index].name);
-    setEmail(todos[index].email);
-    setEditIndex(index);
+  const editTodo = (todo) => {
+    setName(todo.name);
+    setEmail(todo.email);
+    setEditId(todo.id);
+  };
+
+  const cancelEdit = () => {
+    setEditId(null);
+    setName("");
+    setEmail("");
   };
 
   return (
@@ -48,7 +55,11 @@ function Todo() {
 
       <section className="min-h-screen pt-20 flex items-center justify-center bg-gradient-to-r from-blue-500 to-green-500">
         <div className="bg-amber-300 w-96 shadow-xl rounded-xl">
-          <form className="p-6" onSubmit={add}>
+          <form className="p-6" onSubmit={handleSubmit}>
+            <h2 className="text-center text-xl font-bold mb-4">
+              {editId ? "Edit Record" : "Add Record"}
+            </h2>
+
             <input
               type="text"
               placeholder="Enter Your Name"
@@ -65,25 +76,37 @@ function Todo() {
               className="w-full h-[40px] my-4 border border-black rounded-md text-center"
             />
 
-            <button
-              type="submit"
-              className="block mx-auto h-[40px] w-24 bg-blue-500 rounded-md font-semibold text-white"
-            >
-              {editIndex !== null ? "Update" : "Add"}
-            </button>
+            <div className="flex justify-center gap-3">
+              <button
+                type="submit"
+                className="h-[40px] w-24 bg-blue-500 rounded-md font-semibold text-white"
+              >
+                {editId ? "Update" : "Add"}
+              </button>
+
+              {editId && (
+                <button
+                  type="button"
+                  onClick={cancelEdit}
+                  className="h-[40px] w-24 bg-gray-400 rounded-md font-semibold"
+                >
+                  Cancel
+                </button>
+              )}
+            </div>
           </form>
 
-          {/* Show Todos */}
-          <div className="px-6 mt-4 max-h-[180px] overflow-y-auto bg-red-200 rounded-b-xl">
+          {/* SHOW TODOS */}
+          <div className="px-6 mt-4 max-h-[200px] overflow-y-auto bg-red-200 rounded-b-xl">
             {todos.length === 0 && (
               <p className="text-center text-gray-600 py-4">
                 No records found
               </p>
             )}
 
-            { todos.map((item, index) => (
+            {todos.map((item) => (
               <div
-                key={index}
+                key={item.id}
                 className="bg-white p-2 my-2 rounded flex justify-between items-center"
               >
                 <div>
@@ -93,14 +116,14 @@ function Todo() {
 
                 <div className="flex gap-2">
                   <button
-                    onClick={() => editTodo(index)}
+                    onClick={() => editTodo(item)}
                     className="bg-yellow-400 px-2 py-1 rounded"
                   >
                     Edit
                   </button>
 
                   <button
-                    onClick={() => deleteTodo(index)}
+                    onClick={() => deleteTodo(item.id)}
                     className="bg-red-500 text-white px-2 py-1 rounded"
                   >
                     Delete
