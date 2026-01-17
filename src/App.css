@@ -1,4 +1,10 @@
-body{
-    background-color: rgb(0, 0, 42);
-    
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: radial-gradient(
+    circle at top,
+    rgb(0, 0, 60),
+    rgb(0, 0, 30),
+    rgb(0, 0, 0)
+  );
 }
