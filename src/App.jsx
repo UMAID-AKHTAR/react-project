@@ -1,8 +1,10 @@
-import Randompsswrd from "./Randompsswrd";
+import React from "react";
+import R from "./R.jsx";
+
 
 function App() {
   return (
-  <Randompsswrd />
+   <R/>
   )
 }
 

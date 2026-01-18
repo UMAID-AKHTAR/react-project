@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState,useCallback } from "react";
 import "./App.css";
 
-function Randompsswrd() {
+function Randompsswrd(){
   const [length, setLength] = useState(4);
   const [Upper, setUpper] = useState(false);
   const [Lower, setLower] = useState(false);
@@ -14,7 +14,7 @@ function Randompsswrd() {
   let lc="abcdefghijklmnopqrstuvwxyz";
   let nm="0123456789";
 
-  const geneRate = () => {
+  const geneRate = useCallback(() => {
     let final="";
     let ch="";
 
@@ -37,10 +37,11 @@ function Randompsswrd() {
       } else {
         throw new Error("Please choose at least one checkbox");
       }
-    } catch (error) {
+    } 
+    catch (error) {
       alert(error.message);
     }
-  };
+  },[length, Upper, Lower, number, Symbol]);;
 
   const Copy = () => {
     if (fpPass) {
@@ -48,6 +49,14 @@ function Randompsswrd() {
       alert("Password Copied");
     }
   };
+
+ /*useEffect(() => {
+  if (Upper || Lower || number || Symbol) {
+    geneRate();
+  }
+},[geneRate]);*/
+
+
 
   return (
     <>
