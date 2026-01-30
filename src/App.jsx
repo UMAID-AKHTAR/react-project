@@ -1,10 +1,9 @@
 import React from "react";
-import R from "./R.jsx";
-
+import GithubApi from "./GithubApi.jsx";
 
 function App() {
   return (
-   <R/>
+   <GithubApi/>
   )
 }
 
