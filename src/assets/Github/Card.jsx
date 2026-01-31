@@ -14,11 +14,11 @@ function Card({item}) {
       <img
         className="object-cover p-2 w-full flex-1 rounded-2xl"
         src={item.avatar_url}
-        alt={item.login}
+        alt={item.url.name}
       />
       
       <a href={item.html_url} target="_blank" rel="noopener noreferrer" className="py-2 whitespace-nowrap tracking-widest absolute left-1/2 -translate-x-1/2 bottom-2  text-green-100 
-       font-bold hover:text-rose-950 ">
+       font-bold hover:text-black ">
        GitHub Account
       </a>
     </li>

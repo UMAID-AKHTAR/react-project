@@ -32,11 +32,13 @@ function Randompsswrd(){
         for (let i = 0; i < length; i++) {
           final+=ch.charAt(Math.floor(Math.random() * ch.length));
         }
-
         setfpPass(final);
-      } else {
-        throw new Error("Please choose at least one checkbox");
-      }
+      } 
+      
+      else 
+        {
+         throw new Error("Please choose at least one checkbox");
+        }
     } 
     catch (error) {
       alert(error.message);

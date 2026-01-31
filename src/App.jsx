@@ -1,9 +1,9 @@
 import React from "react";
-import GithubApi from "./GithubApi.jsx";
+import Pokemon from "./Pokemon/Pokemon.jsx";
 
 function App() {
   return (
-   <GithubApi/>
+   <Pokemon/>
   )
 }
 
