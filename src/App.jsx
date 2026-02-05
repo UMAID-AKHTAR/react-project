@@ -1,9 +1,9 @@
 import React from "react";
-import Pokemon from "./Pokemon/Pokemon.jsx";
+import Crud from "./Crud.jsx";
 
 function App() {
   return (
-   <Pokemon/>
+   <Crud/>
   )
 }
 
