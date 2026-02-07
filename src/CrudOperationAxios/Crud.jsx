@@ -1,15 +1,32 @@
 import React, {useEffect,useState} from 'react'
-import { getData } from '../Api/AxiosData';
+import { deleteData, getData } from '../Api/AxiosData';
 import CrudCard from './CrudCard';
 
 function Crud() {
-
     const [data, setData] = useState([]);
+
 
     const capitalizeWords = (text) => 
       {
        return text.split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
       }
+
+    const handledelete= async (id)=>
+    {
+      try 
+       {
+       const res= await deleteData(id);
+      
+         if(res.status===200)
+           {
+             setData((prev) => prev.filter((cur) => cur.id !== id)); 
+           }
+       }
+      catch(err)
+       {
+        console.log(err.message);
+       } 
+    }
 
 
     const getPosts= async ()=>
@@ -49,7 +66,8 @@ function Crud() {
 
         <ol className='grid grid-cols-3 gap-4 px-10 mt-10'>
             {
-              data.map((ele)=>(<CrudCard key={ele.id} id ={ele.id} title={capitalizeWords(ele.title)} body={capitalizeWords(ele.body)}/>))
+              data.map((ele)=>(<CrudCard key={ele.id} id ={ele.id} title={capitalizeWords(ele.title)} body={capitalizeWords(ele.body)} handledelete={handledelete}
+              />))
             }
         </ol>
     </div>
