@@ -26,7 +26,7 @@ function GithubApi() {
 
   useEffect(() => {
     let isMounted = true;
-    getData(isMounted); 
+    getData(isMounted);
     return () => {
       isMounted = false;
     };

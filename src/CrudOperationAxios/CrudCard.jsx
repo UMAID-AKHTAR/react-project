@@ -1,25 +1,18 @@
-function CrudCard({title,body,id,handledelete}) {
+function CrudCard({ title, body, id, handledelete }) {
   return (
     <li className='bg-black/80 text-white p-4 rounded-lg'>
 
-        <p className='font-bold text-amber-600'>{id}</p>   
-        <p className='font-semibold text-blue-700 font-serif'>{title}</p>
-        <p className='text-sm px-2 mt-3 font-serif'>{body}</p>
+      <p className='font-bold text-amber-600'>{id}</p>
+      <p className='font-semibold text-blue-700 font-serif'>{title}</p>
+      <p className='text-sm px-2 mt-3 font-serif'>{body}</p>
 
-        <div className='flex gap-3 mt-3'>
-         <button className='bg-blue-600 px-3 py-1 rounded'>Edit</button>
-         <button className='bg-red-600 px-3 py-1 rounded'
-         onClick={()=> handledelete(id)}> Delete </button>
-        </div>
+      <div className='flex gap-3 mt-3'>
+        <button className='bg-blue-600 px-3 py-1 rounded'>Edit</button>
+        <button className='bg-red-600 px-3 py-1 rounded'
+          onClick={() => handledelete(id)}> Delete </button>
+      </div>
     </li>
   )
 }
 
 export default CrudCard
-
-{/*
-    "userId": 10,
-    "id": 100,
-    "title": "at nam consequatur ea labore ea harum",
-    "body": "cupiditate quo est a modi nesciunt soluta\nipsa voluptas error itaque dicta in\nautem qui minus magnam et distinctio eum\naccusamus ratione error aut"
-*/}

@@ -3,7 +3,7 @@ import Crud from "./CrudOperationAxios/Crud.jsx";
 
 function App() {
   return (
-   <Crud/>
+    <Crud />
   )
 }
 
