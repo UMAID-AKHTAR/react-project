@@ -51,11 +51,11 @@ function Todo() {
 
   return (
     <>
-      <form onSubmit={addData} className="bg-amber-950">
+      <form onSubmit={addData} >
         <nav className="bg-black w-full text-sky-300 text-center text-3xl font-bold font-sans py-4">
           Todo List
         </nav>
-
+       <section className="flex justify-center">
         <input
           type="text"
           placeholder="Enter Name"
@@ -69,7 +69,7 @@ function Todo() {
           placeholder="Enter Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="bg-blue-300 border-4 border-cyan-400 rounded-lg px-5 py-2 text-xl outline-none inline-block m-6"
+          className="bg-blue-300 border-2 border-cyan-400 rounded-lg px-5 py-2 text-xl outline-none inline-block m-6"
         />
 
         <button
@@ -78,6 +78,7 @@ function Todo() {
         >
           {editIndex !== null ? "Update Task" : "Add Task"}
         </button>
+        </section>
       </form>
 
       <div className="px-5 py-2 mt-8 bg-pink-700">

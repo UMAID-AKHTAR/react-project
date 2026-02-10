@@ -8,11 +8,10 @@ export const getData = () => {
   return api.get("/posts");
 };
 
-
 export const deleteData = (id) => {
   return api.delete(`/posts/${id}`);
 };
 
 export const postData = (add) => {
-  return api.post("/posts",add);
+  return api.post("/posts", add);
 };
