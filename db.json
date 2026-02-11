@@ -1,3 +1,19 @@
 {
-  "posts": []
+  "posts": [
+    {
+      "title": "umaid akhtar",
+      "body": "Padh Liya Kar Chutiye",
+      "id": 1
+    },
+    {
+      "title": "Navendu",
+      "body": "R@andwa Rahega Kya hamesha ke liye",
+      "id": 2
+    },
+    {
+      "title": "hriday",
+      "body": "nhi degi",
+      "id": 3
+    }
+  ]
 }

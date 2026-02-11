@@ -51,7 +51,7 @@ function Todo() {
 
   return (
     <>
-      <form onSubmit={addData} >
+      <form onSubmit={addData}>
         <nav className="bg-black w-full text-sky-300 text-center text-3xl font-bold font-sans py-4">
           Todo List
         </nav>
