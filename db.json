@@ -1,34 +1,3 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "Learn React",
-      "body": "Practice hooks and components"
-    },
-    {
-      "id": 3,
-      "title": "Workout",
-      "body": "30 minutes cardio"
-    },
-    {
-      "id": 5,
-      "title": "Build Project",
-      "body": "Complete CRUD with Axios"
-    },
-    {
-      "title": "dsmlds",
-      "body": "dsmfla",
-      "id": 7
-    },
-    {
-      "title": "mlfgsl",
-      "body": "snlafnl",
-      "id": 8
-    },
-    {
-      "title": "lxnlgfkmg",
-      "body": "dfmlksm",
-      "id": 9
-    }
-  ]
+  "posts": []
 }

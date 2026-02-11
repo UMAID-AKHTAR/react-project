@@ -6,15 +6,19 @@ import Form from './Form';
 function Crud() {
   const [data, setData] = useState([]);
   const [update, setUpdate] = useState({});
+  const [empty, setEmpty] = useState(false);
 
 
 
-  const handleupdate = (ele)=> setUpdate(ele);
+  const handleupdate = (ele)=>{
+    setUpdate(ele);
+    setEmpty(true);
+  }
 
   // Capital letter of first index
   const capitalizeWords = (text) => {
   if (!text) return "";
-  return text.split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
+  return text.split(" ").map(word => word.charAt(0).toUpperCase()+word.slice(1)).join(" ");
 }
 
   // Delete data 
@@ -47,7 +51,7 @@ function Crud() {
   return (
     <div className='bg-amber-700 px-7 py-7 min-h-screen'>
 
-      <Form data={data} setData={setData} update={update} setUpdate={setUpdate}/>
+      <Form data={data} setData={setData} update={update} setUpdate={setUpdate} empty={empty} setEmpty={setEmpty}/>
         
       <ol className='grid grid-cols-3 gap-4 px-10 mt-10'>
         {

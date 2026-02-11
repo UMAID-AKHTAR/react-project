@@ -55,29 +55,29 @@ function Todo() {
         <nav className="bg-black w-full text-sky-300 text-center text-3xl font-bold font-sans py-4">
           Todo List
         </nav>
-       <section className="flex justify-center">
-        <input
-          type="text"
-          placeholder="Enter Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          className="bg-blue-300 border-4 border-cyan-400 rounded-lg px-5 py-2 text-xl outline-none inline-block m-6"
-        />
+        <section className="flex justify-center">
+          <input
+            type="text"
+            placeholder="Enter Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="bg-blue-300 border-4 border-cyan-400 rounded-lg px-5 py-2 text-xl outline-none inline-block m-6"
+          />
 
-        <input
-          type="text"
-          placeholder="Enter Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="bg-blue-300 border-2 border-cyan-400 rounded-lg px-5 py-2 text-xl outline-none inline-block m-6"
-        />
+          <input
+            type="text"
+            placeholder="Enter Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="bg-blue-300 border-2 border-cyan-400 rounded-lg px-5 py-2 text-xl outline-none inline-block m-6"
+          />
 
-        <button
-          type="submit"
-          className="bg-black text-amber-50 rounded-lg px-6 py-3 text-xl font-bold m-8"
-        >
-          {editIndex !== null ? "Update Task" : "Add Task"}
-        </button>
+          <button
+            type="submit"
+            className="bg-black text-amber-50 rounded-lg px-6 py-3 text-xl font-bold m-8"
+          >
+            {editIndex !== null ? "Update Task" : "Add Task"}
+          </button>
         </section>
       </form>
 
