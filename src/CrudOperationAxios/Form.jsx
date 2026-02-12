@@ -74,7 +74,7 @@ function Form({ data, setData, update, setUpdate, empty, setEmpty }) {
             onChange={(e) =>
               setAdd((prev) => ({ ...prev, title: e.target.value }))
             }
-            className="bg-white/10 backdrop-blur-sm text-white font-semibold px-2 py-1 rounded-md border border-white/20"
+            className="bg-white/10 backdrop-blur-sm outline-none text-white font-semibold px-2 py-1 rounded-md border border-white/20"
           />
           <input
             placeholder="Add Task"
@@ -85,7 +85,7 @@ function Form({ data, setData, update, setUpdate, empty, setEmpty }) {
             onChange={(e) =>
               setAdd((prev) => ({ ...prev, body: e.target.value }))
             }
-            className="bg-white/10 backdrop-blur-sm text-white font-semibold px-2 py-1 rounded-md border border-white/20 ml-6"
+            className="bg-white/10 backdrop-blur-sm outline-none text-white font-semibold px-2 py-1 rounded-md border border-white/20 ml-6"
           />
           <button
             type="submit"

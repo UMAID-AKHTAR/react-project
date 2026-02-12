@@ -1,19 +1,24 @@
 {
   "posts": [
     {
+      "id": 1,
       "title": "umaid akhtar",
-      "body": "Padh Liya Kar Chutiye",
-      "id": 1
+      "body": "Padh Liya Kar Chutiye"
     },
     {
-      "title": "Navendu",
+      "title": "Navendu shekhar maurya",
       "body": "R@andwa Rahega Kya hamesha ke liye",
       "id": 2
     },
     {
+      "id": 3,
       "title": "hriday",
-      "body": "nhi degi",
-      "id": 3
+      "body": "nhi degi"
+    },
+    {
+      "title": "amritesh",
+      "body": "muth kam mara kar",
+      "id": 4
     }
   ]
 }
