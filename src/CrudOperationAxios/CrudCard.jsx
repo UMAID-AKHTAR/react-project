@@ -18,7 +18,7 @@ function CrudCard({
     >
       <p className="font-bold text-amber-400 text-lg">{number}</p>
 
-      <p className="font-semibold text-blue-400 font-serif text-xl mt-1">
+      <p className="font-semibold text-blue-400 font-serif text-xl mt-1"> 
         {title}
       </p>
 
