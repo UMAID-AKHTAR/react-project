@@ -21,6 +21,7 @@ function Form({ data, setData, update, setUpdate, empty, setEmpty }) {
       setData((prev) =>
         prev.map((item) => (item.id === update.id ? res.data : item)),
       );
+      
       setAdd({ title: "", body: "" });
       setUpdate({});
       setEmpty(false);
@@ -71,9 +72,7 @@ function Form({ data, setData, update, setUpdate, empty, setEmpty }) {
             name="title"
             value={add.title}
             title="Enter Title"
-            onChange={(e) =>
-              setAdd((prev) => ({ ...prev, title: e.target.value }))
-            }
+            onChange={(e) => setAdd((prev) => ({ ...prev, title: e.target.value }))}
             className="bg-white/10 backdrop-blur-sm outline-none text-white font-semibold px-2 py-1 rounded-md border border-white/20"
           />
           <input
@@ -82,9 +81,7 @@ function Form({ data, setData, update, setUpdate, empty, setEmpty }) {
             name="body"
             value={add.body}
             title="Enter Body"
-            onChange={(e) =>
-              setAdd((prev) => ({ ...prev, body: e.target.value }))
-            }
+            onChange={(e) => setAdd((prev) => ({ ...prev, body: e.target.value }))}
             className="bg-white/10 backdrop-blur-sm outline-none text-white font-semibold px-2 py-1 rounded-md border border-white/20 ml-6"
           />
           <button
