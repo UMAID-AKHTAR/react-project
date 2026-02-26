@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { postData, upDateData } from "../Api/AxiosData";
 
 function Form({ data, setData, update, setUpdate, empty, setEmpty }) {
+  
   const [add, setAdd] = useState({
     title: "",
     body: "",

@@ -11,10 +11,10 @@ function TemperatureConverter() {
     let converted;
     if (unit === "C") {
       converted = (temp * 9/5) + 32;
-      setResult(`${converted.toFixed(2)} °F`);
+      setResult(`${converted.toFixed(4)} °F`);
     } else {
       converted = (temp - 32) * 5/9;
-      setResult(`${converted.toFixed(2)} °C`);
+      setResult(`${converted.toFixed(4)} °C`);
     }
   };
 

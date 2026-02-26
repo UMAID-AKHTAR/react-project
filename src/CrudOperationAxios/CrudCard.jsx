@@ -3,9 +3,9 @@ function CrudCard({
   title,
   body,
   id,
-  handledelete,
+  handleDelete,
   number,
-  handleupdate,
+  handleUpdate,
 }) {
   return (
     <li
@@ -16,6 +16,7 @@ function CrudCard({
                hover:scale-[1.02]
                hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:-translate-z-10"
     >
+
       <p className="font-bold text-amber-400 text-lg">{number}</p>
 
       <p className="font-semibold text-blue-400 font-serif text-xl mt-1"> 
@@ -26,7 +27,7 @@ function CrudCard({
 
       <div className="flex gap-3 mt-4">
         <button
-          onClick={() => handleupdate(ele)}
+          onClick={() => handleUpdate(ele)}
           className="bg-blue-600 px-3 py-1 rounded-md
                  transition-all duration-200
                  hover:scale-105
@@ -36,7 +37,7 @@ function CrudCard({
         </button>
 
         <button
-          onClick={() => handledelete(id)}
+          onClick={() => handleDelete(id)}
           className="bg-red-600 px-3 py-1 rounded-md 
                  transition-all duration-200
                  hover:scale-105

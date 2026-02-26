@@ -8,7 +8,7 @@ function Crud() {
   const [update, setUpdate] = useState({});
   const [empty, setEmpty] = useState(false);
 
-  const handleupdate = (ele) => {
+  const handleUpdate = (ele) => {
     setUpdate(ele);
     setEmpty(true);
   };
@@ -16,14 +16,11 @@ function Crud() {
   // Capital letter of first index
   const capitalizeWords = (text) => {
     if (!text) return "";
-    return text
-      .split(" ")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ");
+    return text.split(" ").map((word) => word.charAt(0).toUpperCase()+word.slice(1)).join(" ");
   };
 
   // Delete data
-  const handledelete = async (id) => {
+  const handleDelete = async (id) => {
     try {
       const res = await deleteData(id);
       setData((prev) => prev.filter((cur) => cur.id !== id));
@@ -37,7 +34,6 @@ function Crud() {
     try {
       const res = await getData();
       setData(res.data);
-      console.log(res.data);
     } catch (err) {
       console.log(err);
     }
@@ -46,8 +42,8 @@ function Crud() {
   useEffect(() => {
     getPosts();
   }, []);
-
   return (
+    
     <div className="min-h-screen px-7 py-7 bg-gradient-to-r from-gray-950 via-slate-900 to-gray-950">
       <Form
         data={data}
@@ -67,8 +63,8 @@ function Crud() {
             id={ele.id}
             title={capitalizeWords(ele.title)}
             body={capitalizeWords(ele.body)}
-            handledelete={handledelete}
-            handleupdate={handleupdate}
+            handleDelete={handleDelete}
+            handleUpdate={handleUpdate}
           />
         ))}
       </ol>
